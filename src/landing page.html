@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <script src="https://kit.fontawesome.com/1603847c36.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" >
+    <script src="../scripts/scroll.js"></script>
+</head>
+
+<body class="bg-black">
+    <main>
+        <img class="gradient" src="../assets/Hero.Gradient.0bce135c.svg" alt="">
+        <div class="navs2">
+            <div class="nav">
+                <div>
+                    <a href="#"><img src="../assets/18354578-removebg-preview.png" alt=""></a>
+                </div>
+                <div class="content2">
+                    <p class="net set">Compile Codes</p>
+                    <p class="net set">Remove Background</p>
+                    <p class="net">Dictionary</p>
+                    <p class="net get">Draw & Paint</p>
+                    <p class="net get">Edit an Image</p>
+                </div>
+                <div class="content3">
+                    <button class="login">Log In</button>
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <button class="signup">Sign Up</button>
+                </div>
+                <div class="drop">
+                    <button onclick="come()" class="drop-btn"><i class="fa-solid fa-bars"></i></button>
+                    <div id="down" class="down">
+                        <div class="container">
+                            <div class="can">
+                                <button onclick="cancel()" class="cancel"><i class="fa-solid fa-xmark"></i></button>
+                            </div>
+                            <div class="real">
+                                <a onclick="gerrout()" href="#">Compiler</a>
+                                <a onclick="gerrout()" href="#">Background Remover</a>
+                                <a onclick="gerrout()" href="#">Dictionary</a>
+                                <a onclick="gerrout()" href="#">Draw & Paint</a>
+                                <a onclick="gerrout()" href="#">Image Editor</a>
+                                <div class="content4">
+                                    <button class="login">Log In</button>
+                                    &nbsp;
+                                    &nbsp;
+                                    &nbsp;
+                                    <button class="signup">Sign Up</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main container">
+            <h1 class="rocket">🚀</h1>
+            <div class="care hidden">
+               <h1 class="run"> Create the Perfect <br> Web Pages with <br> Syndi_Bot.</h1>
+               <p class="case">Syndi_Bot offers tools to design and build websites specifically tailored to <br> developers and designers for the achievement of durable project.</p>
+               <button class="started">Get Started</button>
+            </div>
+            <div class="features">
+                <div class="container flex-wrap d-flex align-items-center justify-content-between shift ">
+                    <div class="width hidden">
+                        <h1 class="compiler">Code Compiler</h1>
+                        <p class="comment">Syndi_Bot helps you compile your codes in almost all the programming languages. Like C++, C#, Python, Javascript, HTML, CSS, MySQL, PHP, Java, Swift. It has easy features for a neat development.</p>
+                        <button>Compile codes</button>
+                    </div>
+                    <div class="hidden">
+                        <img src="../assets/typing compiler1.gif" alt="">
+                    </div>
+                </div>
+                <div class="container d-flex flex-wrap align-items-center justify-content-between shift">
+                    <div class="hidden">
+                        <video class="cado" autoplay muted loop src="../assets/BACK REMOVE.mp4"></video>
+                    </div>
+                    <div class="width hidden">
+                        <h1 class="compiler">Remove Image Background</h1>
+                        <p class="comment">Syndi_Bot helps you remove background images and gives you a clear background-removed image that you can download instantly. </p>
+                    </div>
+                </div>
+                <div class="container d-flex flex-wrap align-items-center justify-content-between shift">
+                    <div class="width hidden">
+                        <h1 class="compiler">Remove Image Background</h1>
+                        <p class="comment">Syndi_Bot helps you remove background images and gives you a clear background-removed image that you can download instantly. </p>
+                    </div>
+                    <div class="hidden">
+                        <video class="cado" autoplay muted loop src="../assets/BACK REMOVE.mp4"></video>
+                    </div>
+                </div>
+            </div>
+            <!-- <div>
+                <img class="w-100" src="https://nextsiders.vercel.app/_next/static/media/UserReviews.Gradient.2da7487a.svg" alt="">
+            </div> -->
+        </div>
+    </main>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    let down = document.getElementById('down')
+    function cancel(){
+        down.style.top = "-1000px"
+        down.style.transition = "0.6s"
+    }
+    function come(){
+        down.style.top = "0"
+        down.style.transition = "0.6s"
+    }
+    function gerrout(){
+        down.style.top = "-1000px"
+        down.style.transition = "0.6s"
+    }
+</script>
+</html>
