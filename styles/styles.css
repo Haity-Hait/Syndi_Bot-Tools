@@ -22,9 +22,14 @@ body{
     top: 0;
     backdrop-filter: blur(50px);
     background: rgba(0, 0, 0, 0.7);
+    z-index: 99999999999999;
     position: fixed;
     justify-content: center;
 }
+.hidden{
+    z-index: -9999;
+}
+
 .content2{
     display: flex;
     width: 60%;
@@ -51,6 +56,7 @@ html{
 }
 .cado{
     width: 500px;
+    z-index: -1;
 }
 .login{
     border-radius: 5px;
@@ -86,6 +92,9 @@ html{
     top: 8%;
     z-index: -2;
     left: 30%;
+}
+.xx{
+    z-index: -60;
 }
 .drop{
     display: none;
@@ -142,7 +151,7 @@ html{
 .main{
     margin-top: 90px;
     padding: 10px;
-    z-index: 999999;
+    z-index: 10;
 }
 .care{
     margin-top: 110px;
@@ -206,29 +215,69 @@ html{
 .width{
     width: 500px;
 }
-/* .hidden{
+.add, .add2, .add3{
     opacity: 0;
-    filter: blur(5px);
-    transform: translateX(-100%);
-    transition: all 1s;
+    transform: scale(0.1);
+    z-index: -5;
+    transition: all 1s ease-in-out;
 }
-.show{
+.active{
     opacity: 1;
-    filter: blur(0);
-    transform: translateX(0);
-} */
+    transform: scale(1);
+}
+.ddx{
+    width: 300px;
+}
+.translate{
+    animation-name: translate;
+    animation-duration: 1s;
+    animation-play-state: running;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+}
+.fads{
+    color: white;
+    text-decoration: none;
+}
+.fads:hover{
+    color: white;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Key Frames */
+@keyframes translate {
+    from{
+        transition: all 1s linear;
+        transform: translateY(0px);
+    }
+    to{
+        transform: translateY(10px);
+        transition: all 1s linear;
+    }
+}
 @keyframes rocket {
     from{
-    /* transform: rotate(315deg); */
     top: 200px;
         left: 40px;
     }
     to{
         top: 230px;
-        /* transform: rotate(135deg); */
     }
 }
 

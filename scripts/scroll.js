@@ -1,12 +1,30 @@
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        console.log(entry);
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show')
-        } else {
-            entry.target.classList.remove('show')
-        }
-    })
+window.addEventListener('scroll', () => {
+    let content = document.querySelector('.add');
+    let contentPosition = content.getBoundingClientRect().top;
+    let screenPosition = window.innerHeight ;
+    if(contentPosition < screenPosition){
+        content.classList.add('active')
+    }else{
+        content.classList.remove('active')
+    }
 })
-const hiddenEle = document.querySelectorAll('.hidden')
-hiddenEle.forEach((el) => observer.observe(el))
+window.addEventListener('scroll', () => {
+    let content = document.querySelector('.add2');
+    let contentPosition = content.getBoundingClientRect().top;
+    let screenPosition = window.innerHeight ;
+    if(contentPosition < screenPosition){
+        content.classList.add('active')
+    }else{
+        content.classList.remove('active')
+    }
+})
+window.addEventListener('scroll', () => {
+    let content = document.querySelector('.add3');
+    let contentPosition = content.getBoundingClientRect().top;
+    let screenPosition = window.innerHeight ;
+    if(contentPosition < screenPosition){
+        content.classList.add('active')
+    }else{
+        content.classList.remove('active')
+    }
+})
