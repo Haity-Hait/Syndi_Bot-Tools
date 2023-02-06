@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,700;1,300;1,400;1,500;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,800&family=Roboto:wght@100;300;400;500;700&display=swap');
 *{
     margin: 0;
@@ -215,11 +216,21 @@ html{
 .width{
     width: 500px;
 }
-.add, .add2, .add3{
+.add, .add2, .add3, .add4, .add5{
     opacity: 0;
     transform: scale(0.1);
     z-index: -5;
     transition: all 1s ease-in-out;
+}
+.trans, .trans1{
+    opacity: 0;
+    transform: translateX(-1000px);
+    z-index: -5;
+    transition: all 1s ease-in-out;
+}
+.trans_active{
+    opacity: 1;
+    transform: translateX(0);
 }
 .active{
     opacity: 1;
@@ -237,6 +248,15 @@ html{
     animation-timing-function: linear;
     animation-direction: alternate;
 }
+.delay1{
+    animation-delay: 0.3s;
+}
+.delay2{
+    animation-delay: 0.5s;
+}
+.delay3{
+    animation-delay: 0.8s;
+}
 .fads{
     color: white;
     text-decoration: none;
@@ -245,14 +265,65 @@ html{
     color: white;
     text-decoration: none;
 }
+.more{
+    width: 100%;
+    margin-top: 200px;
+    flex-wrap: wrap;
+    text-align: center;
+    display: flex;
+    z-index: -8;
+    justify-content: space-evenly;
+}
+.mini{
+    background-color: #5146e570;
+    width: 350px;
+    border-radius: 10px;
+    height: 300px;
+    z-index: 8;
+    overflow: hidden;
+    padding: 20px;
+    margin-top: 20px;
+}
 
-
-
-
-
-
-
-
+.bluff{
+    border: 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #5046e5;
+    background: transparent;
+    color: #5046e5;   
+    font-size: 16px;
+    z-index: 1;
+    position: relative;
+    font-family: 'Poppin', sans-serif;
+}
+.bluff::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    z-index: -1;
+    transition: all 0.13s linear;
+    background-color: #5046e5;
+    height: 100%;
+}
+.bluff:hover::before{
+    width: 100%;
+}
+.bluff:hover{
+    color: white;
+}
+.mini h3{
+    color: #fff;
+    font-family: "Raleway", sans-serif;
+}
+.small{
+    font-size: 28px;
+    line-height: 40px;
+    color: white;
+    padding: 5px 8px;
+}
 
 
 
@@ -289,6 +360,9 @@ html{
     .gradient{
         left: 23%;
     }
+    .rocket{
+        font-size: 120px;
+    }
 }
 @media (max-width: 1024px) {
     .content2, .content3{
@@ -301,14 +375,71 @@ html{
         left: 22%;
     }
 }
+@media (max-width: 911px) {
+    .biya{
+        width: 400px;
+    }
+}
+@media (max-width: 967px) {
+    .rocket{
+        display: none;
+    }
+
+}
+@media (max-width: 810px) {
+    .best{
+        width: 400px;
+    }
+}
 @media (max-width: 784px) {
     .gradient{
         left: 18%;
+    }
+    .biya{
+        width: 300px;
+    }
+}
+@media (max-width: 768px) {
+    .run{
+        font-size: 60px;
     }
 }
 @media (max-width: 755px) {
     .gradient{
         left: 13%;
+    }
+}
+@media (max-width: 770px) {
+    .odd{
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .run{
+        font-size: 55px;
+    }
+    .best{
+        width: 500px;
+    }
+    .shift{
+        flex-wrap: wrap;
+        text-align: center;
+    }
+    .features{
+        text-align: center;
+        justify-items: center;
+    }
+    .just{
+        display: flex;
+        align-self: center;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+    .biya{
+        width: 500px;
     }
 }
 @media (max-width: 698px) {
@@ -325,6 +456,44 @@ html{
     .gradient{
         left: 0%;
         width: 100%;
+    }
+    .run{
+        font-size: 55px;
+        font-weight: 600;
+    }
+}
+@media (max-width: 500px) {
+    .run{
+        font-size: 40px;
+        line-height: 45px;
+    }
+}
+@media (max-width: 550px) {
+    .run{
+        font-size: 45px;
+        line-height: 50px;
+    }
+}
+@media (max-width: 530px) {
+    .biya{
+        width: 450px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+    }
+}
+@media (max-width: 519px) {
+    .cado, .width{
+        width: 100%;
+    }
+    .xx{
+        width: 100%;
+    }
+}
+@media (max-width: 456px) {
+    .run{
+        font-size: 40px;
     }
 }
 @media (max-width: 350px) {
