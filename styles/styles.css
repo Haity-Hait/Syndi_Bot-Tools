@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
 }
+/* Landing Page */
 body{
     background-color: black;
 }
@@ -295,7 +296,8 @@ html{
     font-size: 16px;
     z-index: 1;
     position: relative;
-    font-family: 'Poppin', sans-serif;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
 }
 .bluff::before{
     content: "";
@@ -319,10 +321,123 @@ html{
     font-family: "Raleway", sans-serif;
 }
 .small{
-    font-size: 28px;
-    line-height: 40px;
+    font-size: 80px;
+    line-height: 35px;
     color: white;
     padding: 5px 8px;
+}
+.gradient2{
+    width: 100%;
+    z-index: -2;
+    position: absolute;
+}
+.sect{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 40px;
+    height: 100%;
+    margin-top: 200px;
+    border-top: 1px solid #e6e7ea3b;
+}
+.check{
+    font-size: 40px;
+    margin: 50px 0;
+}
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+}
+.color{
+    color: #5046e5;
+}
+.no-fill {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+}
+.box{
+    width: 350px;
+    backdrop-filter: blur(50px);
+    background-color: #18181b56;
+    /* height: 280px; */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 0 5px;
+    border: 1px solid #e6e7ea3b;
+}
+.sub{
+    width: 300px;
+}
+.align{
+    text-align: center;
+}
+.want{
+    margin: 50px 0;
+    width: 100%;
+    z-index: 999999999999;
+}
+.fex{
+    display: flex;
+    align-items: center;
+}
+.box p{
+    color: white;
+   margin-top: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+.testimonial_img{
+    border-radius: 100%;
+    width: 50px;
+    padding: 0;
+}
+.come .name{
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    line-height: 20px;
+    font-size: 18px;
+}
+.come .job{
+    font-weight: 300;
+    line-height: 20px;
+    margin-top: -10px;
+    color: rgba(255, 255, 255, 0.692);
+}
+.deed{
+    margin-top: -25px;
+}
+.flow{
+    display: flex;
+    height: fit-content;
+    width: 100%;
+    overflow-x: scroll;
+    align-items: center;
+    justify-content: space-between;
+}
+.flow::-webkit-scrollbar{
+    height: 6px;
+    border-radius: 40px;
+    
+    /* background-color: navy; */
+}
+.flow::-webkit-scrollbar-thumb{
+    width: 10px;
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+
+    border-radius: 20px;
+}
+.footer{
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(50px);
+    width: 100%;
+    height: 300px;
 }
 
 
@@ -331,7 +446,15 @@ html{
 
 
 
-/* Key Frames */
+
+
+
+
+
+
+
+
+/* Key Frames of landing page */
 @keyframes translate {
     from{
         transition: all 1s linear;

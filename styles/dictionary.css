@@ -1,0 +1,250 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #356aff;
+    --bg-color: #f5f5f5;
+    --light-bg-color: #fff;
+    --text-color: #111116;
+    --light-text-color: #cdccd1;
+    --primary-text-color: #fff;
+}
+
+*:not(i) {
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #ae9cff3b;
+}
+.none {
+    display: none;
+}
+
+.mac {
+    font-size: 35px;
+}
+
+body.dark {
+    background-color: #0b061d;
+    --light-bg-color: #1c1b20;
+    transition: all 1s;
+    --text-color: #fff;
+    --light-text-color: #58575c;
+}
+
+.mode {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1;
+}
+
+.toggle {
+    position: relative;
+    cursor: pointer;
+}
+.toggle-track {
+    width: 24px;
+    height: 50px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 3px 0;
+    justify-content: space-between;
+    border: 1px solid var(--light-text-color);
+    background-color: var(--light-bg-color);
+    transition: all 0.2s ease;
+}
+
+.toggle-checkbox {
+    display: none;
+}
+
+.toggle-thumb {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    transition: all 0.5s;
+}
+
+.toggle input:checked~.toggle-thumb {
+    transform: translateY(25px);
+}
+
+.toggle img {
+    width: 20px;
+    height: 20px;
+}
+
+.body {
+    display: flex;
+    height: 100vh;
+    padding: 20px 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.cat {
+    display: none;
+}
+
+.block {
+    display: block;
+}
+
+#more {
+    width: 40vmax;
+    background-color: white;
+    padding: 0px 50px 30px 50px;
+    max-height: 500px;
+    border-radius: 10px;
+    overflow: auto;
+    box-shadow: 0 20px 40px rgba(38, 33, 61, 0.2);
+}
+
+#more::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 10px;
+    background-color: #ae9cff56;
+}
+
+#more::-webkit-scrollbar-thumb {
+    background-color: #1f194c;
+    height: 100px;
+    border-radius: 10px;
+}
+
+.container {
+    background-color: #fff;
+    width: 90vmin;
+    padding: 80px 50px;
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(38, 33, 61, 0.2);
+}
+
+.search-box {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-box input {
+    padding: 5px;
+    width: 70%;
+    background-color: white;
+    border: none;
+    outline: none;
+    border-bottom: 3px solid #ae9cff;
+    font-size: 16px;
+}
+
+.search-box button {
+    padding: 15px 0;
+    width: 25%;
+    background-color: #ae9cff;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+.result {
+    position: relative;
+}
+
+.result h3,
+#more h3 {
+    font-size: 30px;
+    color: #1f194c;
+    text-transform: capitalize;
+}
+
+.result .word,
+#more .word {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+}
+
+.sound {
+    background-color: transparent;
+    color: #ae9cff;
+    border: none;
+    outline: none;
+    font-size: 18px;
+}
+
+.result .details,
+#more .details {
+    display: flex;
+    gap: 10px;
+    color: #b3b6d4;
+    margin: 5px 0 20px 0;
+    font-size: 14px;
+}
+.word-meaning {
+    color: #575a7b;
+}
+.word-example {
+    color: #575a7b;
+    font-style: italic;
+    border-left: 5px solid #ae9cff;
+    padding-left: 20px;
+    margin-top: 30px;
+}
+.error {
+    margin-top: 80px;
+    text-align: center;
+    color: #1f194c;
+}
+.ee {
+    text-align: center;
+    margin: 25px 0 0 0;
+
+}
+.more-btn {
+    border: 1px solid black;
+    background: transparent;
+    border-radius: 10px;
+    color: black;
+    transition: all 0.5s linear;
+    padding: 7px 15px;
+}
+.more-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+}
+
+@media (max-width: 360px) {
+    .search-box {
+        flex-wrap: wrap;
+        justify-content: none;
+    }
+}
+
+@media (max-width: 730px) {
+    .body {
+        flex-wrap: wrap;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .cat {
+        width: 100%;
+        margin: auto;
+        padding-bottom: 100px;
+    }
+    #more {
+        min-width: 100%;
+        margin-top: 50px;
+    }
+}
