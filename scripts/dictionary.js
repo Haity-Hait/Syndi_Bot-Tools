@@ -14,7 +14,6 @@ btn.addEventListener("click", () => {
         .then((data) => {
             for (let i = 0; i <= 0; i++) {
                 const element = data[i];
-                console.log(element);
                 result.innerHTML = `
                     <div class="word">
                         <h3>${element.word}</h3>

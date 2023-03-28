@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Draw & Paint App || Syndi_Bot Tools</title>
+  <link rel="stylesheet" href="../../styles/draw and paint app.css">
+  <link rel="stylesheet" href="../../styles/sidebar.css">
+  <script src="https://kit.fontawesome.com/1603847c36.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <div class="mode">
+    <label class="toggle" for="dark-mode-btn">
+      <div class="toggle-track">
+        <input type="checkbox" class="toggle-checkbox" id="dark-mode-btn" />
+        <span class="toggle-thumb"></span>
+        <img src="../../assets/sun.png" alt="" />
+        <img src="../../assets/moon.png" alt="" />
+      </div>
+    </label>
+  </div>
+
+  <div class="navio">
+    <div class="drop">
+      <button id="dd" class="cop" onclick="poppa()"><i class="fas fa-bars"></i></button>
+      <div id="content" class="content">
+        <div class="btns">
+          <button id="ee" class="cop" onclick="exit()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="water">
+          <img class="sav berlin" alt="">
+        </div>
+        <p class="net set">Compile Codes</p>
+        <p class="net set">Remove Background</p>
+        <p class="net">Dictionary</p>
+        <p class="net get">Draw & Paint</p>
+        <p>Generate QR-Code</p>
+        <p>Scan QR-Code</p>
+        <p>Translate languages</p>
+        <p>Edit an Image</p>
+      </div>
+    </div>
+    <div class="logo">
+      <img id="change-img" class="vat" alt="">
+    </div>
+  </div>
+
+  <div class="body">
+    <div class="container">
+      <section class="tools-board">
+        <div class="row">
+          <label class="title">Shapes</label>
+          <ul class="options">
+            <li class="option tool" id="rectangle">
+              <img src="../../assets/rectangle.svg" alt="">
+              <span>Rectangle</span>
+            </li>
+            <li class="option tool" id="circle">
+              <img src="../../assets/circle.svg" alt="">
+              <span>Circle</span>
+            </li>
+            <li class="option tool" id="triangle">
+              <img src="../../assets/triangle.svg" alt="">
+              <span>Triangle</span>
+            </li>
+            <li class="option">
+              <input type="checkbox" id="fill-color">
+              <label for="fill-color">Fill color</label>
+            </li>
+          </ul>
+        </div>
+        <div class="row">
+          <label class="title">Options</label>
+          <ul class="options">
+            <li class="option active tool" id="brush">
+              <img src="../../assets/brush.svg" alt="">
+              <span>Brush</span>
+            </li>
+            <li class="option tool" id="eraser">
+              <img src="../../assets/eraser.svg" alt="">
+              <span>Eraser</span>
+            </li>
+            <li class="option">
+              <input type="range" id="size-slider" min="1" max="30" value="5">
+            </li>
+          </ul>
+        </div>
+        <div class="row colors">
+          <label class="title">Colors</label>
+          <ul class="options">
+            <li class="option"></li>
+            <li class="option selected"></li>
+            <li class="option"></li>
+            <li class="option"></li>
+            <li class="option">
+              <input type="color" id="color-picker" value="#4A98F7">
+            </li>
+          </ul>
+        </div>
+        <div class="row buttons">
+          <button class="clear-canvas">Clear Drawing</button>
+          <button class="save-img">Save As Image</button>
+        </div>
+      </section>
+      <section class="drawing-board">
+        <canvas></canvas>
+      </section>
+    </div>
+  </div>
+</body>
+<script src="../../scripts/draw & paint app.js"></script>
+<script>
+  const darkModeCheckbox = document.getElementById("dark-mode-btn");
+
+  darkModeCheckbox.addEventListener("change", () => {
+    document.body.classList.toggle("dark");
+    document.body.style.transitionDuration = '1s'
+  });
+  function poppa() {
+        content.style.left = "0"
+        content.style.transition = "1s"
+    }
+    function exit() {
+        content.style.left = "-500px"
+        content.style.transition = "1s"
+    }
+</script>
+
+</html>

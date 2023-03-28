@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Image Editor</title>
+    <link rel="stylesheet" href="../../styles/Image Editor.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="stylesheet" href="../../styles/sidebar.css">
+</head>
+<body>
+    <div class="navio">
+        <div class="drop">
+          <button id="dd" class="cop" onclick="poppa()"><i class="fas fa-bars"></i></button>
+          <div id="content" class="content">
+            <div class="btns">
+              <button id="ee" class="cop" onclick="exit()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="water">
+              <img class="sav berlin"  alt="">
+            </div>
+            <p class="net set">Compile Codes</p>
+            <p class="net set">Remove Background</p>
+            <p class="net">Dictionary</p>
+            <p class="net get">Draw & Paint</p>
+            <p>Generate QR-Code</p>
+            <p>Scan QR-Code</p>
+            <p>Translate languages</p>
+            <p>Edit an Image</p>
+          </div>
+        </div>
+        <div class="logo">
+          <img id="change-img" class="mak" alt="">
+        </div>
+      </div>
+
+    <div class="body">
+        <div class="mode">
+            <label class="toggle" for="dark-mode-btn">
+                <div class="toggle-track">
+                    <input onclick="mode()" type="checkbox" class="toggle-checkbox" id="dark-mode-btn" />
+                    <span class="toggle-thumb"></span>
+                    <img src="../../assets/sun.png" alt="" />
+                    <img src="../../assets/moon.png" alt="" />
+                </div>
+            </label>
+        </div>
+        <div class="container disable">
+            <div class="wrapper">
+                <div class="editor-panel">
+                    <div class="filter">
+                        <label class="title">Filters</label>
+                        <div class="options">
+                            <button id="brightness" class="active">Brightness</button>
+                            <button id="saturation">Saturation</button>
+                            <button id="inversion">Inversion</button>
+                            <button id="grayscale">Grayscale</button>
+                        </div>
+                        <div class="slider">
+                            <div class="filter-info">
+                                <p class="name">Brighteness</p>
+                                <p class="value">100%</p>
+                            </div>
+                            <input type="range" value="100" min="0" max="200">
+                        </div>
+                    </div>
+                    <div class="rotate">
+                        <label class="title">Rotate & Flip</label>
+                        <div class="options">
+                            <button id="left"><i class="fa-solid fa-rotate-left"></i></button>
+                            <button id="right"><i class="fa-solid fa-rotate-right"></i></button>
+                            <button id="horizontal"><i class='bx bx-reflect-vertical'></i></button>
+                            <button id="vertical"><i class='bx bx-reflect-horizontal'></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="preview-img">
+                    <img src="../../assets/image-placeholder.svg" alt="preview-img">
+                </div>
+            </div>
+            <div class="controls">
+                <button class="reset-filter">Reset Filters</button>
+                <div class="row">
+                    <input type="file" class="file-input" accept="image/*" hidden>
+                    <button class="choose-img">Choose Image</button>
+                    <button class="save-img">Save Image</button>
+                    <!-- <button class="crop">Crop</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+<script src="../../scripts/Image Editor.js"></script>
+<script>
+    const darkModeCheckbox = document.getElementById("dark-mode-btn");
+  
+    darkModeCheckbox.addEventListener("change", () => {
+      document.body.classList.toggle("dark");
+      document.body.style.transitionDuration = '1s'
+    });
+    function poppa() {
+          content.style.left = "0"
+          content.style.transition = "1s"
+      }
+      function exit() {
+          content.style.left = "-500px"
+          content.style.transition = "1s"
+      }
+  </script>
+</html>

@@ -5,22 +5,11 @@
   --light-bg-color: #fff;
   --text-color: #111116;
   --light-text-color: #cdccd1;
+  --cop: #111116;
   --primary-text-color: #fff;
+  --url1: url('../../assets/Syndi_bot-logo-dark.png');
+  --url2: url('../../assets/Syndi_bot-language-translator-dark.png');
 }
-/* ::-webkit-scrollbar {
-  width: 5px;
-}
-::-webkit-scrollbar-track {
-  border-radius: 30px;
-  background: #f1f1f1;
-}
-::-webkit-scrollbar-thumb {
-  border-radius: 30px;
-  background: var(--primary-color);
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--bg-color);
-} */
 
 * {
   margin: 0;
@@ -44,6 +33,12 @@ body.dark {
   --light-bg-color: #1c1b20;
   --text-color: #fff;
   --light-text-color: #58575c;
+  --cop: #fff;
+  --url1: url('../../assets/Syndi_bot-logo.png');
+  --url2: url('../../assets/Syndi_bot-language-translator-light.png');
+}
+.sg{
+  color: white;
 }
 .container {
   position: relative;
@@ -285,18 +280,97 @@ body.dark {
   width: 20px;
   height: 20px;
 }
-.logo  img{
-  width: 100px;
-  
+
+
+
+/* What am about to do rn */
+/* .logo  img{
+  width: 160px;
 }
 .logo{
   display: flex;
   justify-content: center;
   padding: 18px 10px;
+  width: 90%;
+}
+.navio{
+  display: flex;
+  align-items:center;
+  justify-content: space-evenly;
+}
+.content{
+  width: 320px;
+  font-size: 25px;
+  line-height: 52px;
+  height: 100vh;
+  backdrop-filter: blur(30px);
+  z-index: 99999999999999;
+  position: fixed;
+  top: 0;
+  overflow: auto;
+  left: -500px;
+  font-weight: 400;
+  padding: 8px 20px ;
+  align-items: center;
+}
+.content::-webkit-scrollbar{
+  width: 0px;
 }
 
+.content::-webkit-scrollbar-thumb{
+  width: 10px;
+  border-radius: 10px;
+  background-color:gainsboro;
+}
+.content p{
+  transition: all 0.5s linear;
 
+  cursor: pointer;
+}
+.content p:hover{
+  color: #2b31cb;
+  font-weight: 500;
+}
+.cop{
+  color: var(--cop);
+  border: 2px solid black;
+  padding: 20px;
+  background-color: blue;
+}
+.drop button{
+  background: none;
+  border: 0;
+  font-size: 30px;
+  cursor: pointer;
+}
+.water{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 15px;
+  align-items: center;
+}
+.btns{
+  text-align: right;
+}
+.btns button{
+  font-size: 35px;
+  background: none;
+  border: 0;
+}
+.btns button:hover{
+  color: #2b31cb;
+}
+.sav{
+  width: 200px;
+  
+}
 
+.change{
+  content: var(--url2);
+}
+.berlin{
+  content: var(--url1);
+} */
 
 
 

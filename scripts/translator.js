@@ -133,14 +133,29 @@ downloadBtn.addEventListener("click", (e) => {
   }
 });
 
-const darkModeCheckbox = document.getElementById("dark-mode-btn");
 
+// make
+const darkModeCheckbox = document.getElementById("dark-mode-btn");
+let content = document.getElementById('content')
 darkModeCheckbox.addEventListener("change", () => {
+  // Mode Change
   document.body.classList.toggle("dark");
 });
+let dd = document.getElementById('dd')
+function poppa(){
+  content.style.left = "0"
+  content.style.transition = "1s"
+}
+function exit(){
+  content.style.left = "-500px"
+  content.style.transition = "1s"
+}
+
+
 
 const inputChars = document.querySelector("#input-chars");
-
 inputTextElem.addEventListener("input", (e) => {
   inputChars.innerHTML = inputTextElem.value.length;
 });
+
+

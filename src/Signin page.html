@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../styles/Signin.css">
+	<script src="https://kit.fontawesome.com/1603847c36.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<div id="container" class="container">
+		<div class="row">
+			<div class="col align-items-center flex-col sign-up">
+				<div class="form-wrapper align-items-center">
+					<div class="form sign-up">
+						<button class="bes face">
+							<i class="fa-brands fa-facebook"></i>
+							&nbsp;
+							&nbsp;
+							<p>Facebook</p>
+						</button>
+						<button class="bes goog">
+							<img class="top" src="../assets/google icon.png" alt="">
+							&nbsp;
+							&nbsp;
+							<p>Google</p>
+						</button>
+						<button class="bes git">
+							<i class="fa-brands fa-github"></i>
+							&nbsp;
+							&nbsp;
+							<p>GitHub</p>
+						</button>
+						<button class="bes twit">
+							<i class="fa-brands fa-twitter"></i>
+							&nbsp;
+							&nbsp;
+							<p>Twitter</p>
+						</button>
+						
+						<p>
+							<span>
+								Already have an account?
+							</span>
+							<b onclick="toggle()" class="pointer">
+								Sign in here
+							</b>
+						</p>
+					</div>
+				</div>
+
+			</div>
+			<div class="col align-items-center flex-col sign-in">
+				<div class="form-wrapper align-items-center">
+					<div class="form sign-in">
+						<button class="bes face">
+							<i class="fa-brands fa-facebook"></i>
+							&nbsp;
+							&nbsp;
+							<p>Facebook</p>
+						</button>
+						<button class="bes goog">
+							<img class="top" src="../assets/google icon.png" alt="">
+							&nbsp;
+							&nbsp;
+							<p>Google</p>
+						</button>
+						<button class="bes git">
+							<i class="fa-brands fa-github"></i>
+							&nbsp;
+							&nbsp;
+							<p>GitHub</p>
+						</button>
+						<button class="bes twit">
+							<i class="fa-brands fa-twitter"></i>
+							&nbsp;
+							&nbsp;
+							<p>Twitter</p>
+						</button>
+
+						<p>
+							<span>
+								Don't have an account?
+							</span>
+							<b onclick="toggle()" class="pointer">
+								Sign up here
+							</b>
+						</p>
+					</div>
+				</div>
+				<div class="form-wrapper">
+
+				</div>
+			</div>
+		</div>
+		<div class="row content-row">
+			<div class="col align-items-center flex-col">
+				<div class="text sign-in">
+					<h2 class="fix">
+						Welcome Back 
+					</h2>
+
+				</div>
+				<div class="img sign-in">
+					<img src="../assets/Syndi_bot-logo.png" alt="">
+				</div>
+			</div>
+			<div class="col align-items-center flex-col">
+				<div class="img sign-up">
+					<img src="../assets/Syndi_bot-logo.png" alt="">
+				</div>
+				<div class="text sign-up">
+					<h2>
+						Join the Multiverse of Dev's Tools
+					</h2>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	let container = document.getElementById('container')
+	toggle = () => {
+		container.classList.toggle('sign-in')
+		container.classList.toggle('sign-up')
+	}
+	setTimeout(() => {
+		container.classList.add('sign-in')
+	}, 200)
+</script>
+</html>

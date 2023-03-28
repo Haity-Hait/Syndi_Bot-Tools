@@ -15,11 +15,11 @@
 
 <body class="bg-black">
     <main>
-        <img class="gradient" src="../assets/Hero.Gradient.0bce135c.svg" alt="">
+        <img class="gradient  fikk"  alt="">
         <div class="navs2">
             <div class="nav">
                 <div>
-                    <a href="#"><img src="../assets/18354578-removebg-preview.png" alt=""></a>
+                    <a href="#"><img class="tuba" src="../assets/Syndi_bot-logo.png" alt=""></a>
                 </div>
                 <div class="content2">
                     <a class="fads" href="#compiler">
@@ -109,13 +109,12 @@
                             <button class="bluff">Remove Background</button>
                         </div>
                     </div>
-                    <div id="dictionary"
-                        class="container d-flex p-0 align-items-center justify-content-between shift add3">
+                    <div id="dictionary" class="container d-flex p-0 align-items-center justify-content-between shift add3">
                         <div class="width hidden">
                             <h1 class="compiler">Dictionary</h1>
                             <p class="comment">Syndi_Bot helps to find meaning to words that seems burdensome to you.
                             </p>
-                            <button class="bluff">Search Words</button>
+                            <button onclick="search()" class="bluff">Search Words</button>
                         </div>
                         <div class="hidden odd">
                             <img class="cado translate best"
@@ -366,6 +365,8 @@
         down.style.top = "-1000px"
         down.style.transition = "0.6s"
     }
-    
+    function search(){
+        window.location.href = "./components/dictionary.html"
+    }
 </script>
 </html>
