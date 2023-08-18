@@ -211,6 +211,9 @@ html{
 .shift{
     margin-top: 100px;
 }
+#alert{
+    display: none;
+}
 .comment{
     font-size: 25px;
     font-family: 'Poppins', sans-serif;

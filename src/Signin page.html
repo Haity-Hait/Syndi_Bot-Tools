@@ -8,6 +8,9 @@
 	<title>Document</title>
 	<link rel="stylesheet" href="../styles/Signin.css">
 	<script src="https://kit.fontawesome.com/1603847c36.js" crossorigin="anonymous"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
 </head>
 
 <body>
@@ -16,31 +19,31 @@
 			<div class="col align-items-center flex-col sign-up">
 				<div class="form-wrapper align-items-center">
 					<div class="form sign-up">
-						<button class="bes face">
+						<button onclick="facebook(event)" class="bes face">
 							<i class="fa-brands fa-facebook"></i>
 							&nbsp;
 							&nbsp;
 							<p>Facebook</p>
 						</button>
-						<button class="bes goog">
+						<button onclick="google(event)" class="bes goog">
 							<img class="top" src="../assets/google icon.png" alt="">
 							&nbsp;
 							&nbsp;
 							<p>Google</p>
 						</button>
-						<button class="bes git">
+						<button onclick="github(event)" class="bes git">
 							<i class="fa-brands fa-github"></i>
 							&nbsp;
 							&nbsp;
 							<p>GitHub</p>
 						</button>
-						<button class="bes twit">
+						<button onclick="twitter(event)" class="bes twit">
 							<i class="fa-brands fa-twitter"></i>
 							&nbsp;
 							&nbsp;
 							<p>Twitter</p>
 						</button>
-						
+
 						<p>
 							<span>
 								Already have an account?
@@ -56,25 +59,25 @@
 			<div class="col align-items-center flex-col sign-in">
 				<div class="form-wrapper align-items-center">
 					<div class="form sign-in">
-						<button class="bes face">
+						<button onclick="facebook(event)" class="bes face">
 							<i class="fa-brands fa-facebook"></i>
 							&nbsp;
 							&nbsp;
 							<p>Facebook</p>
 						</button>
-						<button class="bes goog">
+						<button onclick="google(event)" class="bes goog">
 							<img class="top" src="../assets/google icon.png" alt="">
 							&nbsp;
 							&nbsp;
 							<p>Google</p>
 						</button>
-						<button class="bes git">
+						<button onclick="github(event)" class="bes git">
 							<i class="fa-brands fa-github"></i>
 							&nbsp;
 							&nbsp;
 							<p>GitHub</p>
 						</button>
-						<button class="bes twit">
+						<button onclick="twitter(event)" class="bes twit">
 							<i class="fa-brands fa-twitter"></i>
 							&nbsp;
 							&nbsp;
@@ -100,7 +103,7 @@
 			<div class="col align-items-center flex-col">
 				<div class="text sign-in">
 					<h2 class="fix">
-						Welcome Back 
+						Welcome Back
 					</h2>
 
 				</div>
@@ -132,4 +135,127 @@
 		container.classList.add('sign-in')
 	}, 200)
 </script>
+
+<!-- Firebase -->
+<script>
+	const firebaseConfig = {
+		apiKey: "AIzaSyB4xowjqrD4RrKka34yXY3VsSNGXEzgXps",
+		authDomain: "syndi-bot.firebaseapp.com",
+		projectId: "syndi-bot",
+		storageBucket: "syndi-bot.appspot.com",
+		messagingSenderId: "278767866194",
+		appId: "1:278767866194:web:80ef4d5a59071b521daa8b"
+	};
+
+	// Initialize Firebase
+	const app = firebase.initializeApp(firebaseConfig);
+	const db = firebase.firestore()
+	var ggprovider = new firebase.auth.GoogleAuthProvider();
+	var fbprovider = new firebase.auth.FacebookAuthProvider();
+	var gitprovider = new firebase.auth.GithubAuthProvider();
+	var twitprovider = new firebase.auth.TwitterAuthProvider();
+	const auth = firebase.auth()
+
+</script>
+<script>
+	
+	function google(event) {
+		event.preventDefault()
+		firebase.auth().signInWithPopup(ggprovider).then((result) => {
+			// New writing
+			localStorage.setItem('Users', JSON.stringify(result.user))
+			console.log(result.user);
+			// window.location.href = "dashboard.html"
+		}).catch((err) => {
+			console.log(err);
+		})
+	}
+
+	function facebook(event) {
+		event.preventDefault()
+		firebase.auth().signInWithPopup(fbprovider).then((result) => {
+			// /** @type {firebase.auth.OAuthCredential} */
+			var credential = result.credential;
+			console.log(result);
+			// The signed-in user info.
+			var user = result.user;
+			console.log(user);
+			localStorage.setItem('Users', JSON.stringify(result.user))
+			console.log(result.user);
+			firebase.auth().signInWithRedirect(fbprovider);
+			var accessToken = credential.accessToken;
+
+		})
+			.catch((error) => {
+				// Handle Errors here.
+				var errorCode = error.code;
+				var errorMessage = error.message;
+				// The email of the user's account used.
+				var email = error.email;
+				// The firebase.auth.AuthCredential type that was used.
+				var credential = error.credential;
+
+				// ...
+			});
+	}
+
+
+
+	function github(event) {
+		event.preventDefault()
+		firebase.auth().signInWithPopup(gitprovider).then((result) => {
+			// /** @type {firebase.auth.OAuthCredential} */
+			
+			var token = credential.accessToken;
+			// The signed-in user info.
+			var user = result.user;
+			console.log("User" + user);
+			console.log("Result" + result);
+			console.log(token);
+			localStorage.setItem('Users', JSON.stringify(result.user))
+		}).catch((error) => {
+			// Handle Errors here.
+			var errorCode = error.code;
+			var errorMessage = error.message;
+			// The email of the user's account used.
+			var email = error.email;
+			// The firebase.auth.AuthCredential type that was used.
+			var credential = error.credential;
+			console.log(error);
+			// ...
+		});
+	}
+
+
+	function twitter(event) {
+		event.preventDefault()
+		firebase.auth().signInWithPopup(twitprovider)
+			.then((result) => {
+				// /** @type {firebase.auth.OAuthCredential} */
+
+				// This gives you a the Twitter OAuth 1.0 Access Token and Secret.
+				// You can use these server side with your app's credentials to access the Twitter API.
+				var token = credential.accessToken;
+				var secret = credential.secret;
+				console.log(token);
+				// The signed-in user info.
+				var user = result;
+				console.log(result);
+				// IdP data available in result.additionalUserInfo.profile.
+			// 	localStorage.setItem('Users', JSON.stringify(result.user))
+			// console.log(result.user);
+				
+			}).catch((error) => {
+				// Handle Errors here.
+				var errorCode = error.code;
+				var errorMessage = error.message;
+				// The email of the user's account used.
+				var email = error.email;
+				// The firebase.auth.AuthCredential type that was used.
+				var credential = error.credential;
+				// ...
+			});
+	}
+</script>
+
 </html>
