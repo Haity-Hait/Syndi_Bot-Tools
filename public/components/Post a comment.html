@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Post Comments || Syndi_bot</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free Website Template" name="keywords">
+    <meta content="Free Website Template" name="description">
+    
+    <!-- Favicon -->
+    <link href="../assets/favicon.png" rel="icon">
+    
+    <!-- Google Fonts -->
+    
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/1603847c36.js" crossorigin="anonymous"></script>
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet"> -->
+    
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../styles/bheba.css" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+</head>
+
+<body>
+    <img class="uu" src="https://nextsiders.vercel.app/_next/static/media/UserReviews.Gradient.2da7487a.svg" alt="">
+    <img class="oo" src="https://nextsiders.vercel.app/_next/static/media/UserReviews.Gradient.2da7487a.svg" alt="">
+    <!-- <img class="oopi" src="../assets/Hero.Gradient.0bce135c.svg" alt=""> -->
+    <div class="wrapper">
+        <div class="sidebar">
+            <a href="../index.html"><button class="bluff">Back to main page</button></a>
+           
+            <div class="sidebar-text d-flex flex-column h-100 justify-content-center text-center">
+                <img class="mx-auto d-block w-75 bgy img-fluid rounded-circle mb-4 p-3" id="profile" alt="Image">
+                <h1 class="font-weight-bold" id="name"></h1>
+                <div class="">
+                    <form action="">
+                        <div class="control-group">
+                            <textarea class="form-control" rows="8" id="message" placeholder="Post your review here."
+                                required="required"
+                                data-validation-required-message="Please enter your message"></textarea>
+                        </div>
+                        <button onclick="post(event)" class=" btn-lg btn-block bluff mt-auto">Post
+                            Review</button>
+                    </form>
+                </div>
+            </div>
+            <div class="sidebar-icon d-flex flex-column h-100 justify-content-center text-right">
+                <!-- <i class="fa-solid fa-angles-right text-primary fa-2x"></i> -->
+                <i class="fas fa-2x fa-angle-double-right text-primary"></i>
+            </div>
+        </div>
+        <div class="content">
+            <div class="uy">
+                <img class="" src="../assets/Syndi_bot-logo.png" alt="">
+            </div>
+            <!-- Blog List Start -->
+            <div id="print" class="container  pt-5">
+                
+            </div>
+        </div>
+
+        <!-- Back to Top -->
+        <a href="#" class="back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+</body>
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+
+
+<script src="../scripts/tryout.js"></script>
+
+<script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyB4xowjqrD4RrKka34yXY3VsSNGXEzgXps",
+        authDomain: "syndi-bot.firebaseapp.com",
+        projectId: "syndi-bot",
+        storageBucket: "syndi-bot.appspot.com",
+        messagingSenderId: "278767866194",
+        appId: "1:278767866194:web:80ef4d5a59071b521daa8b"
+    };
+
+    // Initialize Firebase
+    const app = firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore()
+
+	// const auth = firebase.auth()
+
+</script>
+
+<script>
+    let data = JSON.parse(localStorage.getItem("Users"))
+    if (!data) {
+        window.location.href = "../Signin page.html"
+    }
+    let profileImg = document.getElementById("profile")
+    let UserName = document.getElementById("name")
+
+    function onMount() {
+        profileImg.src = data.photoURL
+        UserName.innerHTML = data.displayName
+    }
+    onMount()
+</script>
+
+<script>
+    let displayName = data.displayName
+    let photoURL = data.photoURL
+    let review = document.getElementById("message")
+
+    function post(event) {
+        event.preventDefault()
+        db.collection('reviews').doc().set({
+            author: displayName,
+            photoURL: photoURL,
+            review: review.value
+        }).then((res) => {
+            console.log(res);
+            alert("Successfully Posted")
+            clear()
+            display()
+        }).catch((err) => {
+            alert("An error occured while posting the review")
+
+        })
+    }
+
+    function clear() {
+        review.value = " "
+    }
+    let printe = document.getElementById("print")
+    function display() {
+        printe.innerHTML = " "
+        db.collection('reviews').get().then((doc) => {
+            console.log(doc);
+            doc.forEach(element => {
+                let id = element.id
+                printe.innerHTML += `
+                    <div class="row blog-item px-3 pb-5">
+                        <div class="col-md-5">
+                            <img class="img-fluid mb-4 mb-md-0" src="${element.data().photoURL}" alt="Image">
+                        </div>
+                        <div class="col-md-7">
+                            <h3 class="mt-md-4 px-md-3 mb-2 py-2 ash font-weight-bold">${element.data().author}</h3>
+
+                            <p class="text-white">
+                                ${element.data().review}
+                            </p>
+                        </div>
+                    </div>
+                `
+
+            })
+        }).catch((err) => {
+            console.log(err);
+        })
+    }
+    display()
+</script>
+
+</html>

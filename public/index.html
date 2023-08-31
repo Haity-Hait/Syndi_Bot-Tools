@@ -19,6 +19,7 @@
 <body class="bg-black">
     <main>
         <img class="gradient  fikk" alt="">
+        
         <div class="navs2">
             <!-- Alert -->
             <!-- <div id="alert" class="alert alert-success position-fixed  alert-dismissible fade show" role="alert">
@@ -54,7 +55,7 @@
                     &nbsp;
                     &nbsp;
                     &nbsp; -->
-                    <button onclick="signin()" class="signup">Sign In</button>
+                    <button onclick="signin()" id="signin" class="signup">Sign In</button>
                 </div>
                 <div class="drop">
                     <button onclick="come()" class="drop-btn"><i class="fa-solid fa-bars"></i></button>
@@ -74,7 +75,7 @@
                                     &nbsp;
                                     &nbsp;
                                     &nbsp; -->
-                                    <button onclick="signin()" class="signup">Sign In</button>
+                                    <button onclick="signin()" id="signin1" class="signup">Sign In</button>
                                 </div>
                             </div>
                         </div>
@@ -100,7 +101,7 @@
                             <p class="comment">Syndi_Bot helps you compile your codes in almost all the programming
                                 languages. Like C++, C#, Python, Javascript, HTML, CSS, MySQL, PHP, Java, Swift. It has
                                 easy features for a neat development.</p>
-                            <button onclick="complile()" id="bluff" class="bluff">Compile Codes</button>
+                            <button onclick="compile()" id="bluff" class="bluff">Compile Codes</button>
                         </div>
                         <div class="hidden odd">
                             <img class="xx" src="../assets/typing compiler1.gif" alt="">
@@ -117,7 +118,7 @@
                             <h1 class="compiler">Remove Image Background</h1>
                             <p class="comment">Syndi_Bot helps you remove background images and gives you a clear
                                 background-removed image that you can download instantly. </p>
-                            <button onclick="tran()" id="bluff" class="bluff">Remove Background</button>
+                            <button onclick="removeBg()" id="bluff" class="bluff">Remove Background</button>
                         </div>
                     </div>
                     <div id="dictionary"
@@ -126,7 +127,7 @@
                             <h1 class="compiler">Dictionary</h1>
                             <p class="comment">Syndi_Bot helps to find meaning to words that seems burdensome to you.
                             </p>
-                            <button onclick="tran()" id="bluff" class="bluff">Search Words</button>
+                            <button onclick="dictionary()" id="bluff" class="bluff">Search Words</button>
                         </div>
                         <div class="hidden odd">
                             <img class="cado translate best"
@@ -142,7 +143,7 @@
                             <h1 class="compiler">Drawing and Painting</h1>
                             <p class="comment">Syndi_Bot helps with drawing and painting of One's Innovative thinking.
                             </p>
-                            <button onclick="tran()" id="bluff" class="bluff">Draw & Paint</button>
+                            <button onclick="draw()" id="bluff" class="bluff">Draw & Paint</button>
                         </div>
                     </div>
                     <div class="more" id="more">
@@ -150,19 +151,19 @@
                             <h3>Generate or Scan QR-Code</h3>
                             <p class="comment small">Syndi_Bot helps you to generate a QR-Code for your URL, Apps and
                                 many other resources at a free cost and at easy rate.</p>
-                            <button onclick="tran()" id="bluff" class="bluff">Generate</button>
+                            <button onclick="qrcode()" id="bluff" class="bluff">Generate</button>
                         </div>
                         <div class="mini add5">
                             <h3>Translate languages</h3>
                             <p class="comment small">Syndi_Bot helps you to generate a QR-Code for your URL at a free
                                 cost and at easy rate.</p>
-                            <button onclick="tran()" id="bluff" class="bluff px-4">Translate</button>
+                            <button onclick="translator()" id="bluff" class="bluff px-4">Translate</button>
                         </div>
                         <div class="mini trans">
                             <h3>Edit an Image</h3>
                             <p class="comment small">Syndi_Bot helps you to generate a QR-Code for your URL at a free
                                 cost and at easy rate.</p>
-                            <button onclick="tran()" id="bluff" class="bluff px-4">Edit</button>
+                            <button onclick="editor()" id="bluff" class="bluff px-4">Edit</button>
                         </div>
                     </div>
                 </div>
@@ -176,7 +177,7 @@
                 <div>
                     <div class="align">
                         <h1 class="run check">People Who Loves Using Syndi_Bot.</h1>
-                        <button id="bluff" class="bluff dep">Post a Comment</button>
+                        <a href="./components/Post a comment.html"><button id="bluff" class="bluff dep">Post a Review</button></a>
                     </div>
                 </div>
                 <div class="want">
@@ -381,31 +382,72 @@
     let currentUser = localStorage.getItem("Users")
     let btns = document.getElementById("bluff")
     let alerta = document.getElementById("alert")
-    // btns.addEventListener("click", () => {
-    //     if (!currentUser) {
-    //         window.location.href = "./Signin page.html"
-    //     } else {
-    //         window.location.href = "./components/dictionary.html"
-    //     }
-
-    // })
+    let logBtn = document.getElementById("signin")
+    let logBtnn = document.getElementById("signin1")
+    if (!currentUser) {
+        logBtn.style.display = "block"
+        logBtnn.style.display = "block"
+    } else {
+        logBtn.style.display = "none"
+        logBtnn.style.display = "none"
+    }
     function signin() {
         if (!currentUser) {
             window.location.href = "./Signin page.html";
         } else {
-            alert("You have are currently logged in!")
+            alert("You are currently logged in!")
         }
     }
-    function compile(){
+    function compile() {
         if (!currentUser) {
-           alert("We are currently working on Code compiler")
+            window.location.href = "./Signin page.html";
         } else {
-            alert("You have are currently logged in!")
+            alert("We are currently working on Code compiler")
         }
     }
-    // function tran() {
-    //     window.location.href = "./Signin page.html"
-    // }
+    function removeBg() {
+        if (!currentUser) {
+            window.location.href = "./Signin page.html";
+        } else {
+            alert("We are currently working on Background Remover.")
+        }
+    }
+    function dictionary() {
+        if (!currentUser) {
+            window.location.href = "./Signin page.html";
+        } else {
+            window.location.href = "./components/dictionary.html";
+        }
+    }
+    function draw() {
+        if (!currentUser) {
+            window.location.href = "./Signin page.html";
+        } else {
+            window.location.href = "./components/drawing and painting.html";
+        }
+    }
+    function qrcode() {
+        if (!currentUser) {
+            window.location.href = "./Signin page.html";
+        } else {
+            alert("We are currently working on QR CODE Generator.")
+        }
+    }
+    function translator() {
+        if (!currentUser) {
+            window.location.href = "./Signin page.html";
+        } else {
+            window.location.href = "./components/translator.html";
+        }
+    }
+    function editor() {
+        if (!currentUser) {
+            window.location.href = "./Signin page.html";
+        } else {
+            window.location.href = "./components/Image Editor.html";
+        }
+    }
+
     let down = document.getElementById('down')
     function cancel() {
         down.style.top = "-1000px"

@@ -198,6 +198,10 @@ body.dark {
 .word-meaning {
     color: #575a7b;
 }
+.hut{
+    z-index: 99999999999999999999999999999999999999999999999999999999999999999;
+    position: absolute;
+}
 .word-example {
     color: #575a7b;
     font-style: italic;
@@ -228,6 +232,22 @@ body.dark {
     color: white;
 }
 
+
+.firstt{
+    background-color: red;
+    /* z-index: 1; */
+    width: 30%;
+    height: 80vh;
+    /* position: sticky; */
+    /* top: 0; */
+}
+
+.posts{
+    /* z-index: 1; */
+    width: 100%;
+    height: 100vh;
+    /* background-color: palegoldenrod; */
+}
 @media (max-width: 360px) {
     .search-box {
         flex-wrap: wrap;

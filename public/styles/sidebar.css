@@ -3,6 +3,7 @@
     --bg-color: #f5f5f5;
     --bg-colorw: #f5f5f5;
     --light-bg-color: #fff;
+    --sub: #000;
     --text-color: #111116;
     --light-text-color: #cdccd1;
     --cop: #111116;
@@ -14,6 +15,15 @@
     --url4: url('../../assets/Syndi_bot-draw-and-paint-dark.png');
     --url5: url('../../assets/Syndi_bot-image-editor-dark.png');
 
+  }
+  .uu{
+    position: fixed;
+  }
+  .whole{
+    background-color: var(--sub);
+    height: 100vh;
+    width: 100%;
+    /* position: fixed; */
   }
   /* :root {
     --primary-color: #356aff;
@@ -29,7 +39,8 @@ body.dark {
   --bg-color: #15202b;
   --bg-colorw: #111116;
   --light-bg-color: #1c1b20;
-  --text-color: #fff;
+    --sub: #000;
+    --text-color: #fff;
   --light-text-color: #58575c;
   --set:  rgba(0, 0, 0, 0.4);
   --cop: #fff;
@@ -41,6 +52,9 @@ body.dark {
 }
 body{
   background-color: var(--bg-colorw);
+}
+a{
+  text-decoration: none;
 }
 .logo  img{
     width: 160px;

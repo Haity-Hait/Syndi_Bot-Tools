@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
-	<link rel="stylesheet" href="../styles/Signin.css">
+	<link rel="stylesheet" href="./styles/Signin.css">
 	<script src="https://kit.fontawesome.com/1603847c36.js" crossorigin="anonymous"></script>
 	<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
@@ -158,14 +158,17 @@
 
 </script>
 <script>
-	
+	let currentUser = localStorage.getItem("Users")
+	if (currentUser) {
+		window.location.href = "./index.html";
+	} 
+
 	function google(event) {
 		event.preventDefault()
 		firebase.auth().signInWithPopup(ggprovider).then((result) => {
-			// New writing
 			localStorage.setItem('Users', JSON.stringify(result.user))
 			console.log(result.user);
-			// window.location.href = "dashboard.html"
+			window.location.href = "./index.html";
 		}).catch((err) => {
 			console.log(err);
 		})
@@ -174,29 +177,24 @@
 	function facebook(event) {
 		event.preventDefault()
 		firebase.auth().signInWithPopup(fbprovider).then((result) => {
-			// /** @type {firebase.auth.OAuthCredential} */
 			var credential = result.credential;
 			console.log(result);
-			// The signed-in user info.
 			var user = result.user;
 			console.log(user);
-			localStorage.setItem('Users', JSON.stringify(result.user))
+			localStorage.setItem('Users', JSON.stringify(result))
 			console.log(result.user);
 			firebase.auth().signInWithRedirect(fbprovider);
 			var accessToken = credential.accessToken;
+			window.location.href = "./index.html";
 
 		})
 			.catch((error) => {
-				// Handle Errors here.
 				var errorCode = error.code;
 				var errorMessage = error.message;
-				// The email of the user's account used.
 				var email = error.email;
-				// The firebase.auth.AuthCredential type that was used.
 				var credential = error.credential;
-
-				// ...
 			});
+
 	}
 
 
@@ -204,25 +202,16 @@
 	function github(event) {
 		event.preventDefault()
 		firebase.auth().signInWithPopup(gitprovider).then((result) => {
-			// /** @type {firebase.auth.OAuthCredential} */
-			
 			var token = credential.accessToken;
-			// The signed-in user info.
 			var user = result.user;
-			console.log("User" + user);
-			console.log("Result" + result);
-			console.log(token);
-			localStorage.setItem('Users', JSON.stringify(result.user))
+			localStorage.setItem('Users', JSON.stringify(result))
+			window.location.href = "./index.html";
 		}).catch((error) => {
-			// Handle Errors here.
 			var errorCode = error.code;
 			var errorMessage = error.message;
-			// The email of the user's account used.
 			var email = error.email;
-			// The firebase.auth.AuthCredential type that was used.
 			var credential = error.credential;
 			console.log(error);
-			// ...
 		});
 	}
 
@@ -231,29 +220,20 @@
 		event.preventDefault()
 		firebase.auth().signInWithPopup(twitprovider)
 			.then((result) => {
-				// /** @type {firebase.auth.OAuthCredential} */
-
-				// This gives you a the Twitter OAuth 1.0 Access Token and Secret.
-				// You can use these server side with your app's credentials to access the Twitter API.
 				var token = credential.accessToken;
 				var secret = credential.secret;
 				console.log(token);
-				// The signed-in user info.
 				var user = result;
 				console.log(result);
-				// IdP data available in result.additionalUserInfo.profile.
-			// 	localStorage.setItem('Users', JSON.stringify(result.user))
-			// console.log(result.user);
+				localStorage.setItem('Users', JSON.stringify(result))
 				
+				window.location.href = "./index.html";
+
 			}).catch((error) => {
-				// Handle Errors here.
 				var errorCode = error.code;
 				var errorMessage = error.message;
-				// The email of the user's account used.
 				var email = error.email;
-				// The firebase.auth.AuthCredential type that was used.
 				var credential = error.credential;
-				// ...
 			});
 	}
 </script>

@@ -3,11 +3,11 @@
 <head>
     <meta charset="utf-8">
     <title>Syndi Bot || Image Editor</title>
-    <link rel="stylesheet" href="../../styles/Image Editor.css">
+    <link rel="stylesheet" href="../styles/Image Editor.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
-    <link rel="stylesheet" href="../../styles/sidebar.css">
+    <link rel="stylesheet" href="../styles/sidebar.css">
 </head>
 <body>
     <div class="navio">
@@ -20,14 +20,15 @@
             <div class="water">
               <img class="sav berlin"  alt="">
             </div>
-            <p class="net set">Compile Codes</p>
-            <p class="net set">Remove Background</p>
-            <p class="net">Dictionary</p>
-            <p class="net get">Draw & Paint</p>
-            <p>Generate QR-Code</p>
-            <p>Scan QR-Code</p>
-            <p>Translate languages</p>
-            <p>Edit an Image</p>
+            <a href="#"><p class="net set">Compile Codes</p></a>
+                <a href="#"><p class="net set">Remove Background</p></a>
+                <a href="../components/dictionary.html"><p class="net">Dictionary</p></a>
+                <a href="../components/drawing and painting.html"><p class="net get">Draw & Paint</p></a>
+                <a href="#"><p>Generate QR-Code</p></a>
+                <a href="#"><p>Scan QR-Code</p></a>
+                <a href="../components/translator.html"><p>Translate languages</p></a>
+                <a href="../components/Image Editor.html"><p>Edit an Image</p></a>
+                <a href="../components/PostsComment.html"><p>Post a Comment</p></a>
           </div>
         </div>
         <div class="logo">
@@ -93,8 +94,12 @@
 
 
 </body>
-<script src="../../scripts/Image Editor.js"></script>
+<script src="../scripts/Image Editor.js"></script>
 <script>
+    let currentUser = localStorage.getItem("Users")
+	if (!currentUser) {
+		window.location.href = "../Signin page.html";
+	} 
     const darkModeCheckbox = document.getElementById("dark-mode-btn");
   
     darkModeCheckbox.addEventListener("change", () => {
